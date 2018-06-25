@@ -19,7 +19,7 @@ include_once "layout_header.php";
 
 // contents
 echo "<div class='right-button-margin'>";
-    echo "<a href='index.php' class='btn btn-outline-secondary'>liste formations</a>";
+    echo "<a href='read_formations.php' class='btn btn-outline-secondary'>liste formations</a>";
 echo "</div>";
 
 

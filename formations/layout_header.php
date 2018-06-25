@@ -16,10 +16,10 @@
   <body>
 
     <!-- container -->
-    <div class="container">
+    <div class="container col-md-6">
       <?php
       // Show page header
       echo '<div class="page-header">
-        <h1>{$page_title}</h1>
+        <h1>' . $page_title . '</h1>
       </div>';
        ?>

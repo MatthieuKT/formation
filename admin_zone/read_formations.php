@@ -51,7 +51,7 @@ if($num > 0) {
                 echo "<a href='read_one.php?id={$id}' role='button' class='btn btn-outline-primary'>Read</a> ";
 
                 // edit product button
-                echo "<a href='update_product.php?id={$id}' class='btn btn-outline-info'>Edit</a> ";
+                echo "<a href='update_formation.php?id={$id}' class='btn btn-outline-info'>Edit</a> ";
 
                 // delete product button
                 echo "<a href='delete_product.php?id={$id}' class='btn btn-outline-danger'>Delete</a>";

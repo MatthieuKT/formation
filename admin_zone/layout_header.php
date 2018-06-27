@@ -16,7 +16,7 @@
   <body>
 
     <!-- container -->
-    <div class="container col-md-6">
+    <div class="container col-md-8">
       <?php
       // Show page header
       echo '<div class="page-header">

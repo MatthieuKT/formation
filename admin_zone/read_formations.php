@@ -26,7 +26,7 @@ echo "</div>";
 
 // Display the formations if there are any
 if($num > 0) {
-  ?>
+?>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -54,7 +54,7 @@ if($num > 0) {
                 echo "<a href='update_formation.php?id={$id}' class='btn btn-outline-info'>Edit</a> ";
 
                 // delete product button
-                echo "<a href='delete_product.php?id={$id}' class='btn btn-outline-danger'>Delete</a>";
+                echo "<a delete-id='{$id}' class='btn btn-danger delete-object'>Delete</a>";
                 echo "</td>";
 
             echo "</tr>";
@@ -64,7 +64,32 @@ if($num > 0) {
 
   </table>
 
-  <?php
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <a id="deleteOK" class="btn btn-primary" href="#" role="button">Link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php
 }
 
 // Set page footer

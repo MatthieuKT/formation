@@ -54,7 +54,7 @@ if($num > 0) {
                 echo "<a href='update_formation.php?id={$id}' class='btn btn-outline-info'>Edit</a> ";
 
                 // delete product button
-                echo "<a delete-id='{$id}' class='btn btn-danger delete-object'>Delete</a>";
+                echo "<button type='button' delete-id='{$id}' class='btn btn-danger delete-object' data-toggle='modal' data-target='#exampleModal'>supprimer</button>";
                 echo "</td>";
 
             echo "</tr>";
@@ -65,26 +65,21 @@ if($num > 0) {
   </table>
 
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
+
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
         <div class="modal-body">
-          ...
+          Voulez-vous vraiment supprimer cette formation?
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a id="deleteOK" class="btn btn-primary" href="#" role="button">Link</a>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <form id="delete-validation" method="post" action="delete_formation.php">
+            <input type="hidden" id="id-delete" name="id-delete" value="">
+            <input class="btn btn-danger" type="submit" value="Supprimer">
+          </form>
         </div>
       </div>
     </div>

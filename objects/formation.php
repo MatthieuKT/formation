@@ -121,7 +121,7 @@ class Formation{
 
   // Delete formation
   function delete() {
-    $query = "DELETE FROM " . $this->table_name . "WHERE id = ?";
+    $query = "DELETE FROM " . $this->table_name . " WHERE id = ?";
 
     $stmt = $this->conn->prepare($query);
     $stmt->bindParam(1, $this->id);

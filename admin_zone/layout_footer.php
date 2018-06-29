@@ -6,17 +6,15 @@
 
 // récupère tous les boutons .delete-id de la page
 var deleteElts = document.getElementsByClassName('delete-object');
-// récupère le bouton d'envoi de la fenêtre modale de confirmation
-var setURLBtn = document.getElementById('deleteOK');
+// récupère l'input caché qui sera posté
+var submitID = document.getElementById('id-delete');
 //Pour chaque .delete-id on associe un événement qui récupère l'id généré en php
 for (var i = 0, c=deleteElts.length; i<c; i++) {
     deleteElts[i].onclick = function() {
       // récupère l'id généré dynamiquement par PHP
       var id = this.getAttribute("delete-id");
-      // ajoute l'id comme attribut URL
-      url = "delete_formation.php?id=" + id;
-      // applique le nouvel url au bouton de confirmation de la fenêtre modale
-      setURLBtn.href = url;
+      // attribue l'id comme value pour l'input type hidden
+      submitID.setAttribute('value', id);
     };
 }
 </script>

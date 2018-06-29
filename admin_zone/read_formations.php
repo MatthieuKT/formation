@@ -20,10 +20,6 @@ $num = $stmt->rowCount();
 $page_title = "Liste des formations";
 include_once "layout_header.php";
 
-echo "<div class='right-button-margin'>";
-    echo "<a href='create_formation.php' class='btn btn-default'>Nouvelle formation</a>";
-echo "</div>";
-
 // Display the formations if there are any
 if($num > 0) {
 ?>
@@ -48,21 +44,24 @@ if($num > 0) {
 
                 echo "<td>";
                 // read product button
-                echo "<a href='read_one.php?id={$id}' role='button' class='btn btn-outline-primary'>Read</a> ";
+                echo "<a href='read_one.php?id={$id}' role='button' class='btn btn-outline-primary'><i class='fas fa-glasses'></i></a> ";
 
                 // edit product button
-                echo "<a href='update_formation.php?id={$id}' class='btn btn-outline-info'>Edit</a> ";
+                echo "<a href='update_formation.php?id={$id}' class='btn btn-outline-primary'>Modifier</a> ";
 
                 // delete product button
-                echo "<button type='button' delete-id='{$id}' class='btn btn-danger delete-object' data-toggle='modal' data-target='#exampleModal'>supprimer</button>";
+                echo "<button type='button' delete-id='{$id}' class='btn btn-outline-danger delete-object' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-trash-alt'></i></button>";
                 echo "</td>";
 
             echo "</tr>";
           }
         ?>
     </tbody>
-
   </table>
+
+  <!-- Bouton "nouvelle formation" -->
+  <a href='create_formation.php' class='btn btn-outline-success'><i class='fas fa-plus'></i> Nouvelle formation</a>
+
 
   <!-- Button trigger modal -->
 
@@ -75,7 +74,7 @@ if($num > 0) {
           Voulez-vous vraiment supprimer cette formation?
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Annuler</button>
           <form id="delete-validation" method="post" action="delete_formation.php">
             <input type="hidden" id="id-delete" name="id-delete" value="">
             <input class="btn btn-danger" type="submit" value="Supprimer">

@@ -31,7 +31,9 @@ $page_title = $formation->nom;
 include_once 'layout_header.php';
 ?>
 
-<a class="btn" href="read_formations.php" role="button">Retour à la liste</a>
+<!-- Lien "retou à la liste" -->
+<a href="read_formations.php"><i class="fas fa-long-arrow-alt-left"></i> Retour à la liste</a>
+
 <br> <br>
 
 <table class="table table-bordered">

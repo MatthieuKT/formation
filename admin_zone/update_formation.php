@@ -24,10 +24,6 @@ $category = new Category($db);
 // set ID property of formation to be edited
 $formation->id=$id;
 
-echo $formation->id;
-echo $id;
-var_dump($id);
-
 // Read the detail of formation to be edited
 $formation->readOne();
 
@@ -36,7 +32,11 @@ $page_title = "modifier une formation";
 include_once "layout_header.php";
 
 ?>
-<!-- post code will be here -->
+
+<!-- Lien "retou à la liste" -->
+<a href="read_formations.php"><i class="fas fa-long-arrow-alt-left"></i> Retour à la liste</a>
+
+<!-- Formulaire d'affichage -->
 <form class="form" action="?id=<?php echo $id;?>" method="post">
   <div class="form-group">
     <label for="nom">Titre: </label>
@@ -88,9 +88,6 @@ include_once "layout_header.php";
 </form>
 
 <?php
-echo "<div class='right-button-margin'>";
-    echo "<a href='read_formations.php' class='btn btn-default pull-right'>retour à la liste</a>";
-echo "</div>";
 
 // Post code
 if ($_POST) {
